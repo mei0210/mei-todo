@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+
+{% block header %}
+    <h1>TodoList</h1>
+    <p>早く終わらせて、おいしいご飯を食べよう❤︎</p>
+{% endblock header %}
+
+
+{% block content %}
+<div class="todo">
+    <a href="{% url 'create' %}" class="create">新規作成</a>
+
+{% for item in object_list %}
+    <div class="list {{ item.priority }}">
+
+        <div  class="title">
+            <p>{{ item.title }}<br><span>期日：{{ item.duedate }}</span></p>
+        </div>
+        <div class="option">
+            <a href="{% url 'detail' item.pk %}" class="detail">詳細</a>
+            <a href="{% url 'update' item.pk %}" class="update">編集</a>
+            <a href="{% url 'delete' item.pk %}" class="delete">消去</a>
+        </div>
+    </div>
+{% endfor %}
+    <p>[緊急度]　<span class="height">height</span>　<span class="nomal">nomal</span>　<span class="low">low</span></p>
+</div>
+
+{% endblock content %}

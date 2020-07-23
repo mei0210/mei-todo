@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            padding: 50px;
+            background-color: gray;
+            color: #fff;
+        }
+
+        .create {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #000099;
+            margin: 0px auto 30px;
+            border-radius: 30px;
+        }
+
+        .title {
+            display: inline-block;
+            line-height: 34px;
+            width: 50%;
+        }
+        
+        span {
+            opacity: 0.5;
+        }
+
+        .todo {
+            max-width: 800px;
+            width: 80%;
+            margin: 100px auto;
+            color: #333;
+            text-align: right;
+        }
+
+        .list {
+            padding: 15px 30px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .danger {
+            box-shadow: 1px 1px 2px 1px red;
+        }
+        .info {
+            box-shadow: 1px 1px 2px 1px #000099;
+        }
+        .success {
+            box-shadow: 1px 1px 2px 1px gray;
+        }
+        .height {
+            color: red;
+        }
+        .nomal {
+            color: #000099;
+        }
+        .low {
+            color: gray;
+        }
+        a {
+            display: inline-block;
+            padding: 5px 15px;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+        }
+        a:hover {
+            opacity: 0.5;
+            transition-duration: 0.3s;
+        }
+        p {
+            text-align: left;
+        }
+        .update {
+            background-color: gray;
+        }
+        .delete {
+            background-color: rgb(243, 75, 75);
+        }
+        .detail {
+            background-color: gray;
+        }
+
+        @media screen and (max-width:570px) { 
+            .todo {
+                margin: 50px auto;
+            }
+
+            .list {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            a {
+                padding: 5px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        {% block header %}
+        {% endblock header %}
+    </header>
+
+    {% block content %}
+    {% endblock content %}
+
+</body>
+</html>

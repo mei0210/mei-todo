@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+{% block header %}
+    <h1>TodoDetail</h1>
+    <p>詳細</p>
+{% endblock header %}
+
+
+{% block content %}
+<div class="todo">
+
+    <div class="list {{ object.priority }}">
+
+        <div  class="title">
+            <p>タイトル：{{ object.title }}<br><span>期日：{{ object.duedate }}</span></p>
+        </div>
+        <div class="">
+            <p>メモ：{{ object.memo }}</p>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
